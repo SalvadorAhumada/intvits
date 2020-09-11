@@ -23,24 +23,18 @@ interface Topics {
   label:string
 }
 
-
 function App(): JSX.Element {
   
   const [filter, setFilter] = useState<number>(0);
   const [filterName, setFilterName] = useState<string>("");
   const [selectedIvits, setSelectedIvits] = useState<Intervits[]>([]);
-  const [options, setOptions] = useState<string[]>(["Javascript" ,"OOP" ,"Data Structure" ,"Algohritms" ]);
-  const [defaultOption] = useState<string>("Filter by topic");
+  // const [options, setOptions] = useState<string[]>(["Javascript" ,"OOP" ,"Data Structure" ,"Algohritms" ]);
+  // const [defaultOption] = useState<string>("Filter by topic");
 
   useEffect(()=> {
     const fetchedIvits = fetchSelectedVits(Topic.ALL)
     setSelectedIvits(fetchedIvits);
-  });
-
-
-   const ivit = selectedIvits.map((vit:any) => (
-     <Ivit key={vit.id} selectedIvit={vit} />
-   ));
+  },[]);
 
   const closeDropdown = () => {
     setFilter(0);
@@ -76,7 +70,18 @@ function App(): JSX.Element {
         {/*<Dropdown options={options} onChange={setNewFilter}/>*/}
         {/*{options.map((option)=> <p>{option.value}</p>)}*/}
       </div>
-      <div className="cards-wrapper">{ivit}</div>
+      <div className="cards-wrapper">
+        {selectedIvits.map((currentIvit:Intervits)=> 
+        <Ivit 
+        id={currentIvit.id}
+        title={currentIvit.title}
+        difficulty={currentIvit.difficulty}
+        topic={currentIvit.topic}
+        explanation={currentIvit.explanation}
+        resources={currentIvit.resources}
+        examples={currentIvit.examples}
+        />)}
+      </div>
     </div>
   );
 }

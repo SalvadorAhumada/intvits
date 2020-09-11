@@ -1,9 +1,22 @@
 import React from "react";
+import Intervit from "../App";
 
-export default function Ivit(selectedVit:any) {
+interface Intervit {
+  id:number,
+  title:string,
+  difficulty:number,
+  topic:number,
+  explanation:string,
+  resources:object[],
+  examples:string[]
+}
+
+const Ivit:React.FC<Intervit> = (props:Intervit) => {
   return (
     <div className="navbar-wrapper">
-        Ivit
+      {props.title}
     </div>
   );
 }
+
+export default Ivit;
