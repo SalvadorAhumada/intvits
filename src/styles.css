@@ -1,0 +1,113 @@
+body {
+    background: #16222a; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to bottom,
+      #3a6073,
+      #16222a
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to bottom,
+      #3a6073,
+      #16222a
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-attachment: fixed;
+  }
+  
+  .App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  div.Dropdown-menu div.Dropdown-option.is-selected {
+    background: white;
+    color: #2d4a59;
+  }
+  
+  .Dropdown-root {
+    width: 200px;
+  }
+  
+  .dropdown-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .close-btn {
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-right: 20px;
+  }
+  
+  .Dropdown-control {
+    cursor: pointer;
+  }
+  
+  .Dropdown-root .Dropdown-control {
+    width: 200px;
+    margin: 0 auto;
+    background: none;
+    color: #eee2dc;
+    padding: 15px;
+  }
+  
+  .Dropdown-root.is-open .Dropdown-menu {
+    left: 200px;
+    top: -34px;
+  }
+  
+  .Dropdown-menu .Dropdown-option {
+    color: #edf2f4;
+    background: #16222a;
+    background: -webkit-linear-gradient(to bottom, #3a6073, #16222a);
+    background: linear-gradient(to bottom, #3a6073, #16222a);
+    background-attachment: fixed;
+  }
+  
+  .Dropdown-menu .Dropdown-option:hover {
+    background: white;
+    color: #16222a;
+  }
+  
+  .Dropdown-root.is-open .Dropdown-menu {
+    background: none;
+  }
+  
+  span.Dropdown-arrow {
+    position: absolute;
+    right: 16px;
+    top: 24px;
+  }
+  
+  .header-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1.5rem;
+    color: #eee2dc;
+    height: 20vh;
+  }
+  
+  p {
+    font-size: 18px;
+  }
+  
+  .header-main h2 {
+    margin: 0;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.623);
+  }
+  
+  .cards-wrapper {
+    padding: 50px 0;
+  }
+  
+  @media screen and (max-width: 800px) {
+    .header-main {
+      height: 40vh;
+    }
+  }
+  
