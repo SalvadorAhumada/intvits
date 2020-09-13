@@ -1,0 +1,21 @@
+.card-wrapper {
+    max-width: 80%;
+    margin: 20px auto;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    cursor:pointer;
+}
+
+.card-header-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+h3 {
+    color:white;
+    margin:0;
+    text-align:left;
+}

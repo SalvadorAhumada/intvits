@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import "./styles.css";
 import Navbar from "./components/Navbar";
-import Dropdown from "react-dropdown";
-import "react-dropdown/style.css";
 import { Animated } from "react-animated-css";
 import Ivit from "./components/Ivit";
 import { Cancel } from "@material-ui/icons";
 import { fetchSelectedVits, Topic } from "./components/storage/intervits";
+import { topics } from "./components/storage/topics";
 
 interface Intervits {
   id:number,
@@ -24,31 +23,43 @@ interface Topics {
 }
 
 function App(): JSX.Element {
-  
-  const [filter, setFilter] = useState<number>(0);
-  const [filterName, setFilterName] = useState<string>("");
+
   const [selectedIvits, setSelectedIvits] = useState<Intervits[]>([]);
-  // const [options, setOptions] = useState<string[]>(["Javascript" ,"OOP" ,"Data Structure" ,"Algohritms" ]);
-  // const [defaultOption] = useState<string>("Filter by topic");
+  const [filters, setFilters] = useState<Topics[]>([]);
+  const [openDropdown, setDropdown] = useState<boolean>(false);
+  const [filter, setFilter] = useState<string>("Filter intervits");
 
   useEffect(()=> {
-    const fetchedIvits = fetchSelectedVits(Topic.ALL)
-    setSelectedIvits(fetchedIvits);
+    setFilters(topics);
+    setSelectedIvits(fetchSelectedVits(Topic.ALL));
   },[]);
 
-  const closeDropdown = () => {
-    setFilter(0);
-    setFilterName("");
+  const handleFilter = () => {
+    setDropdown(!openDropdown);
+  }
+
+  const handleFilterOption = (e:Topics) => {
+    const selectedFilter:number = e.value;
+    setSelectedIvits(fetchSelectedVits(selectedFilter));
+    setFilter(e.label);
+    setDropdown(!openDropdown);
+  }
+
+  const handleClose = () => {
+    setDropdown(false);
+    setFilter("Filter intervits");
+    setSelectedIvits(fetchSelectedVits(Topic.ALL));
   };
 
-   const close = filter ? (
-     <Cancel
-       onClick={closeDropdown}
-       style={{ color: "white", cursor: "pointer" }}
-     />
-   ) : (
-     ""
-   );
+  const setFilterDifficulty = (props:Intervits) => {
+    console.log("in parent, show me all with:", props.topic, props.difficulty)
+  }
+
+  const showDropdown = openDropdown ? <div className="dropdown-options">
+    {filters.map((filter:Topics,index:number)=> <span onClick={()=>handleFilterOption(filter)} key={index}>{filter.label}</span>)}
+    </div> : "" 
+
+  const showClose = filter !== "Filter intervits" ? <span><Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}><Cancel style={{color:"white"}}/></Animated></span>: ""
 
   return (
     <div className="App">
@@ -56,7 +67,7 @@ function App(): JSX.Element {
       <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
         <div className="header-main">
           <h2>
-            Got a question? We have an{" "}
+            Have a question? Here's an{" "}
             <span style={{ textDecoration: "underline" }}>answer</span>.
           </h2>
           <p>
@@ -66,13 +77,16 @@ function App(): JSX.Element {
         </div>
       </Animated>
       <div className="dropdown-wrapper">
-        <span className="close-btn">{close}</span>
-        {/*<Dropdown options={options} onChange={setNewFilter}/>*/}
-        {/*{options.map((option)=> <p>{option.value}</p>)}*/}
+        <div className="dropdown">
+          <span className="close" onClick={handleClose}>{showClose}</span>
+          <div className="selected-option" onClick={handleFilter}>{filter}</div>
+          {showDropdown}
+        </div>
       </div>
       <div className="cards-wrapper">
-        {selectedIvits.map((currentIvit:Intervits)=> 
+        {selectedIvits.map((currentIvit:Intervits, index:number, setFilter:any )=> 
         <Ivit 
+        key={index}
         id={currentIvit.id}
         title={currentIvit.title}
         difficulty={currentIvit.difficulty}
@@ -80,6 +94,7 @@ function App(): JSX.Element {
         explanation={currentIvit.explanation}
         resources={currentIvit.resources}
         examples={currentIvit.examples}
+        filterByDifficulty={()=>setFilterDifficulty(currentIvit)}
         />)}
       </div>
     </div>

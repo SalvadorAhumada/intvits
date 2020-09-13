@@ -9,11 +9,11 @@ export type Intervit = {
   };
 
   export enum Topic {
-    JAVASCRIPT = 1,
-    OOP = 2 ,
-    DATA_STUCTURE = 3,
-    ALGORITHMS = 4,
-    ALL = 5
+    ALL,
+    JAVASCRIPT,
+    OOP,
+    DATA_STUCTURE,
+    ALGORITHMS,
   }
   
   
@@ -23,7 +23,7 @@ export type Intervit = {
       title: "What is type coercion ?",
       difficulty: 3,
       topic: 1,
-      explanation: "this is fizzbuz",
+      explanation: "Type coercion is the process of converting value from one type to another (such as string to number, object to boolean, and so on). Any type, be it primitive or an object, is a valid subject for type coercion",
       resources: [
         {
           title: "JavaScript type coercion explained",
@@ -40,9 +40,9 @@ export type Intervit = {
     },
     {
       id: 2,
-      title: "This is OOP",
+      title: "FizzBuzz",
       difficulty: 2,
-      topic: 2,
+      topic: 3,
       explanation: "This is interchange",
       resources: [],
       examples:[]
@@ -73,13 +73,30 @@ export type Intervit = {
       explanation: "This is interchange",
       resources: [],
       examples:[]
+    },
+    {
+      id: 6,
+      title: 'What are the basics of OOP?',
+      difficulty: 1,
+      topic: 2,
+      explanation: "This is interchange",
+      resources: [],
+      examples:[]
+    },
+    {
+      id: 7,
+      title: 'How to change the value of two variables withouth using a third varaiable?',
+      difficulty: 2,
+      topic: 4,
+      explanation: "This is interchange",
+      resources: [],
+      examples:[]
     }
   ];
   
   export const fetchSelectedVits = (topic: Topic) => {
-    if(topic === 5) {
-      return ALL_INTERVITS;
-    }
+    if(topic === 0) return ALL_INTERVITS;
+
     const results = ALL_INTERVITS.filter((intervit) => intervit.topic === topic);    
     return results;
   };
