@@ -3,7 +3,7 @@
     margin: 20px auto;
     border: 1px solid white;
     border-radius: 10px;
-    padding: 10px;
+    padding: 0;
     cursor:pointer;
 }
 
@@ -12,10 +12,40 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    width:97%;
+}
+
+.card-header-left h3 {
+    width:100%;
+    padding:10px;
+}
+
+.card-header-right {
+    margin: 10px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 h3 {
     color:white;
     margin:0;
     text-align:left;
+}
+
+.js {
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+    border: 1px solid white;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+.link-wrapper {
+    color:none;
+    text-decoration: none;
 }

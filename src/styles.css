@@ -154,6 +154,13 @@ body {
     top: 13px;
     cursor:pointer;
   }
+
+  .filter-text {
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   
   @media screen and (max-width: 800px) {
     .header-main {

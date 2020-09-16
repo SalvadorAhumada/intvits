@@ -91,6 +91,33 @@ export type Intervit = {
       explanation: "This is interchange",
       resources: [],
       examples:[]
+    },
+    {
+      id: 8,
+      title: 'What is an Interface?',
+      difficulty: 2,
+      topic: 4,
+      explanation: "This is interchange",
+      resources: [],
+      examples:[]
+    },
+    {
+      id: 9,
+      title: 'Arrays length',
+      difficulty: 1,
+      topic: 1,
+      explanation: "This is interchange",
+      resources: [],
+      examples:[]
+    },
+    {
+      id: 10,
+      title: 'Insertion sort',
+      difficulty: 1,
+      topic: 4,
+      explanation: "This is interchange",
+      resources: [],
+      examples:[]
     }
   ];
   

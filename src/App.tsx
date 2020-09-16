@@ -28,6 +28,7 @@ function App(): JSX.Element {
   const [filters, setFilters] = useState<Topics[]>([]);
   const [openDropdown, setDropdown] = useState<boolean>(false);
   const [filter, setFilter] = useState<string>("Filter intervits");
+  const [showClose, setShowClose] = useState<boolean>(false);
 
   useEffect(()=> {
     setFilters(topics);
@@ -41,25 +42,40 @@ function App(): JSX.Element {
   const handleFilterOption = (e:Topics) => {
     const selectedFilter:number = e.value;
     setSelectedIvits(fetchSelectedVits(selectedFilter));
+    setShowClose(true);
     setFilter(e.label);
     setDropdown(!openDropdown);
   }
 
   const handleClose = () => {
+    setShowClose(false);
     setDropdown(false);
     setFilter("Filter intervits");
     setSelectedIvits(fetchSelectedVits(Topic.ALL));
   };
 
   const setFilterDifficulty = (props:Intervits) => {
-    console.log("in parent, show me all with:", props.topic, props.difficulty)
+    const current = topics.filter(topic => topic.value === props.topic);
+    setShowClose(true);
+    setFilter(current[0].label);
+    const difficultyFiltered = selectedIvits.filter(ivit => ivit.difficulty === props.difficulty && ivit.topic === props.topic);
+    setSelectedIvits(difficultyFiltered);
   }
 
-  const showDropdown = openDropdown ? <div className="dropdown-options">
-    {filters.map((filter:Topics,index:number)=> <span onClick={()=>handleFilterOption(filter)} key={index}>{filter.label}</span>)}
-    </div> : "" 
+  const setCategoryFilter = (props:Intervits) => {
+    const current = topics.filter(topic => topic.value === props.topic);
+    setShowClose(true);
+    setFilter(current[0].label);
+    setSelectedIvits(fetchSelectedVits(current[0].value));
+  }
 
-  const showClose = filter !== "Filter intervits" ? <span><Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}><Cancel style={{color:"white"}}/></Animated></span>: ""
+  const showDropdown = openDropdown ? <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
+  <div className="dropdown-options">
+    {filters.map((filter:Topics,index:number)=> <span onClick={()=>handleFilterOption(filter)} key={index}>{filter.label}</span>)}
+    </div>
+    </Animated> : "" 
+
+  const showTextFilter = <Animated animationIn="fadeIn" animationOut="fadeOut" animateOnMount={false} isVisible={showClose}><Cancel style={{color:"#f77a40"}}/></Animated>;
 
   return (
     <div className="App">
@@ -78,13 +94,15 @@ function App(): JSX.Element {
       </Animated>
       <div className="dropdown-wrapper">
         <div className="dropdown">
-          <span className="close" onClick={handleClose}>{showClose}</span>
+          <span className="close" onClick={handleClose}>
+            {showTextFilter}
+          </span>
           <div className="selected-option" onClick={handleFilter}>{filter}</div>
           {showDropdown}
         </div>
       </div>
       <div className="cards-wrapper">
-        {selectedIvits.map((currentIvit:Intervits, index:number, setFilter:any )=> 
+        {selectedIvits.map((currentIvit:Intervits, index:number )=> 
         <Ivit 
         key={index}
         id={currentIvit.id}
@@ -95,6 +113,7 @@ function App(): JSX.Element {
         resources={currentIvit.resources}
         examples={currentIvit.examples}
         filterByDifficulty={()=>setFilterDifficulty(currentIvit)}
+        filterByCategory={()=>setCategoryFilter(currentIvit)}
         />)}
       </div>
     </div>
