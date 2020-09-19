@@ -4,6 +4,7 @@ import { Star } from "@material-ui/icons";
 import "./styles/Ivit.css";
 import { Equalizer, Category, BubbleChart } from "@material-ui/icons";
 import { topics } from "./storage/topics";
+import { Animated } from "react-animated-css";
 
 interface Intervit {
   id:number,
@@ -79,10 +80,11 @@ const Ivit:React.FC<Intervit> = (props:Intervit)=> {
   </div> : ""
 
   return (
+    <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
     <div id={setId(props.title)} className="card-wrapper">
       <div className="card-header">
         <div className="card-header-left" onClick={openCardHandler}> 
-          <span onClick={()=>setFilter(props)} style={{width:"50px", margin:"5px", display:"flex"}} title={`Difficulty: ${props.difficulty}. Click here to see all Level ${props.difficulty} for this topic.`}>{getDifficulty(props.difficulty)}</span>
+          <span onClick={()=>setFilter(props)} style={{width:"60px", margin:"5px", display:"flex"}} title={`Difficulty: ${props.difficulty}. Click here to see all Level ${props.difficulty} for ${getName(props.topic)}.`}>{getDifficulty(props.difficulty)}</span>
             <h3>{props.title}</h3>
         </div>
         <div className="card-header-right" title={`Click here to see all Intervits for ${getName(props.topic)}`} onClick={()=>filterCategory(props)}>
@@ -91,6 +93,7 @@ const Ivit:React.FC<Intervit> = (props:Intervit)=> {
       </div>
       {cardBody}
     </div>
+    </Animated>
   );
 }
 

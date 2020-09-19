@@ -69,13 +69,11 @@ function App(): JSX.Element {
     setSelectedIvits(fetchSelectedVits(current[0].value));
   }
 
-  const showDropdown = openDropdown ? <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
-  <div className="dropdown-options">
+  const showDropdown = openDropdown ? <div className="dropdown-options">
     {filters.map((filter:Topics,index:number)=> <span onClick={()=>handleFilterOption(filter)} key={index}>{filter.label}</span>)}
-    </div>
-    </Animated> : "" 
+    </div>: "" 
 
-  const showTextFilter = <Animated animationIn="fadeIn" animationOut="fadeOut" animateOnMount={false} isVisible={showClose}><Cancel style={{color:"#f77a40"}}/></Animated>;
+  const showTextFilter = <Animated animationIn="fadeIn" animationOut="fadeOut" animateOnMount={false} isVisible={showClose}><Cancel style={{color:"#4b7d63"}}/></Animated>;
 
   return (
     <div className="App">
@@ -83,8 +81,8 @@ function App(): JSX.Element {
       <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
         <div className="header-main">
           <h2>
-            Have a question? Here's an{" "}
-            <span style={{ textDecoration: "underline" }}>answer</span>.
+            <span className="title-1">Have a question?</span><br/>
+            <span className="title-2">We have the answer</span>.
           </h2>
           <p>
             A collection of the most frequently asked questions in technical
@@ -97,7 +95,7 @@ function App(): JSX.Element {
           <span className="close" onClick={handleClose}>
             {showTextFilter}
           </span>
-          <div className="selected-option" onClick={handleFilter}>{filter}</div>
+          <div className="selected-option" style={{backgroundColor: openDropdown ? "#4B7D63" : "#70A288"}} onClick={handleFilter}>{filter}</div>
           {showDropdown}
         </div>
       </div>
