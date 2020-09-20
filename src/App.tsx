@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import { Animated } from "react-animated-css";
 import Ivit from "./components/Ivit";
 import { Cancel } from "@material-ui/icons";
-import { fetchSelectedVits, Topic } from "./components/storage/intervits";
+import { fetchSelectedVits, Topic, Resource } from "./components/storage/intervits";
 import { topics } from "./components/storage/topics";
 
 interface Intervits {
@@ -14,7 +14,8 @@ interface Intervits {
   topic:number,
   explanation:string,
   resources:object[],
-  examples:string[]
+  examples:string[],
+  video:Resource
 }
 
 interface Topics {
@@ -73,7 +74,7 @@ function App(): JSX.Element {
     {filters.map((filter:Topics,index:number)=> <span onClick={()=>handleFilterOption(filter)} key={index}>{filter.label}</span>)}
     </div>: "" 
 
-  const showTextFilter = <Animated animationIn="fadeIn" animationOut="fadeOut" animateOnMount={false} isVisible={showClose}><Cancel style={{color:"#4b7d63"}}/></Animated>;
+  const showTextFilter = <Animated animationIn="fadeIn" animationOut="fadeOut" animateOnMount={false} isVisible={showClose}><Cancel style={{color:"#313131"}}/></Animated>;
 
   return (
     <div className="App">
@@ -95,7 +96,7 @@ function App(): JSX.Element {
           <span className="close" onClick={handleClose}>
             {showTextFilter}
           </span>
-          <div className="selected-option" style={{backgroundColor: openDropdown ? "#4B7D63" : "#70A288"}} onClick={handleFilter}>{filter}</div>
+          <div className="selected-option" style={{backgroundColor: openDropdown ? "#E2C567" : "#EECF6D"}} onClick={handleFilter}>{filter}</div>
           {showDropdown}
         </div>
       </div>
@@ -110,6 +111,7 @@ function App(): JSX.Element {
         explanation={currentIvit.explanation}
         resources={currentIvit.resources}
         examples={currentIvit.examples}
+        video={currentIvit.video}
         filterByDifficulty={()=>setFilterDifficulty(currentIvit)}
         filterByCategory={()=>setCategoryFilter(currentIvit)}
         />)}

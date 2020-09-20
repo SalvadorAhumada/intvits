@@ -4,36 +4,42 @@
 
 h1 {
   margin: 10px;
-  font-size: 18px;
-  border: 1px solid #eee2d4;
-  padding: 5px 10px;
+  font-size: 15px;
+  border: 2px solid #313131;
+  padding: 5px 7px;
+  font-weight: 1000;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background:#313131;
+  color:#C2C8E8;
 }
 
 h1:hover {
   cursor: pointer;
   -webkit-animation: color-change-2x 2s linear infinite alternate both;
   animation: color-change-2x 2s linear infinite alternate both;
+  border: 2px solid #fa9f42;
 }
 
 @-webkit-keyframes color-change-2x {
   25% {
     color: #fa9f42;
-    border: 1px solid #fa9f42;
+    border: 2px solid #fa9f42;
   }
   100% {
     color: #ef233c;
-    border: 1px solid #ef233c;
+    border: 2px solid #ef233c;
   }
 }
 
 @keyframes color-change-2x {
   25% {
     color: #fa9f42;
-    border: 1px solid #fa9f42;
+    border: 2px solid #fa9f42;
   }
   100% {
     color: #ef233c;
-    border: 1px solid #ef233c;
+    border: 2px solid #ef233c;
   }
 }
 
@@ -49,16 +55,16 @@ ul {
   flex-direction: row;
   justify-content: space-around;
   list-style-type: none;
-  width: 400px;
   padding: 0;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 ul li a {
-  color: #edf2f4;
+  color: #313131;
   text-decoration: none;
   transition: 0.5s;
-  width: 200px;
+  width: 300px;
+  font-weight: bolder;
 }
 
 ul li:nth-child(1) {
@@ -71,11 +77,6 @@ ul li:nth-child(2) {
   position: absolute;
   right: 100px;
   top: 18px;
-}
-
-ul li a:hover {
-  font-size: 14px;
-  transition: 0.5s;
 }
 
 .menu {

@@ -5,7 +5,8 @@ export type Intervit = {
     topic:number,
     explanation:string,
     resources:object[],
-    examples:string[]
+    examples:string[],
+    video:Resource
   };
 
   export enum Topic {
@@ -15,7 +16,11 @@ export type Intervit = {
     DATA_STUCTURE,
     ALGORITHMS,
   }
-  
+
+  export interface Resource {
+    title:string,
+    url:string
+  }
   
   export const ALL_INTERVITS = [
     {
@@ -29,110 +34,164 @@ export type Intervit = {
           title: "JavaScript type coercion explained",
           url:
             "https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/"
-        },
-        {
-          title:
-            "Avoiding JavaScript Type Conversion Issues - How Type Coercion Works",
-          url: "https://www.youtube.com/watch?v=XWNq7XJuwoo"
         }
       ],
-      examples: ['1 + "3"', "[] + 1", '5 - "2"']
+      examples: ['1 + "3"', "[] + 1", '5 - "2"'],
+      video:
+      {
+        title:"Avoiding JavaScript Type Conversion Issues - How Type Coercion Works",
+        url: "https://www.youtube.com/watch?v=XWNq7XJuwoo"
+      }
     },
     {
       id: 2,
       title: "FizzBuzz",
       difficulty: 2,
       topic: 3,
-      explanation: "This is interchange",
+      explanation: " interchange",
       resources: [{}],
-      examples:[]
+      examples:[],
+      video:
+      {
+        title:"Avoiding JavaScript Type Conversion Issues - How Type Coercion Works",
+        url: "https://www.youtube.com/watch?v=XWNq7XJuwoo"
+      }
     },
     {
       id: 3,
       title: "Repeating number in array",
       difficulty: 2,
       topic: 3,
-      explanation: "This is interchange",
+      explanation: " interchange",
       resources: [{}],
-      examples:[]
+      examples:[],
+      video:
+      {
+        title:"Avoiding JavaScript Type Conversion Issues - How Type Coercion Works",
+        url: "https://www.youtube.com/watch?v=XWNq7XJuwoo"
+      }
     },
     {
       id: 4,
       title: "Reversing a LinkedList",
       difficulty: 5,
       topic: 4,
-      explanation: "This is interchange",
+      explanation: " interchange",
       resources: [{}],
-      examples:[]
+      examples:[],
+      video:
+      {
+        title:"Avoiding JavaScript Type Conversion Issues - How Type Coercion Works",
+        url: "https://www.youtube.com/watch?v=XWNq7XJuwoo"
+      }
     },
     {
       id: 5,
       title: '"this" in Javascript',
       difficulty: 4,
       topic: 1,
-      explanation: "This is interchange",
+      explanation: "In most cases, the value of this is determined by how a function is called (runtime binding). It can't be set by assignment during execution, and it may be different each time the function is called.",
       resources: [
         {
           title:"test", 
           url:"https://medium.com/better-programming/understanding-the-this-keyword-in-javascript-cb76d4c7c5e8"
+        },
+        {
+          title:"test2",
+          url:"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this"
         }
       ],
-      examples:[]
+      examples:[],
+      video:
+      {
+        title:"Avoiding JavaScript Type Conversion Issues - How Type Coercion Works",
+        url: "eOI9GzMfd24"
+      }
     },
     {
       id: 6,
       title: 'Basics of OOP?',
       difficulty: 1,
       topic: 2,
-      explanation: "This is interchange",
+      explanation: " interchange",
       resources: [{}],
-      examples:[]
+      examples:[],
+      video:
+      {
+        title:"Avoiding JavaScript Type Conversion Issues - How Type Coercion Works",
+        url: "https://www.youtube.com/watch?v=XWNq7XJuwoo"
+      }
     },
     {
       id: 7,
       title: 'Changing the value of two variables without using a third varaiable',
       difficulty: 2,
       topic: 4,
-      explanation: "This is interchange",
+      explanation: " interchange",
       resources: [{}],
-      examples:[]
+      examples:[],
+      video:
+      {
+        title:"Avoiding JavaScript Type Conversion Issues - How Type Coercion Works",
+        url: "https://www.youtube.com/watch?v=XWNq7XJuwoo"
+      }
     },
     {
       id: 8,
       title: 'Interfaces',
       difficulty: 2,
       topic: 4,
-      explanation: "This is interchange",
+      explanation: " interchange",
       resources: [{}],
-      examples:[]
+      examples:[],
+      video:
+      {
+        title:"Avoiding JavaScript Type Conversion Issues - How Type Coercion Works",
+        url: "https://www.youtube.com/watch?v=XWNq7XJuwoo"
+      }
     },
     {
       id: 9,
       title: 'Arrays length',
       difficulty: 1,
       topic: 1,
-      explanation: "This is interchange",
+      explanation: " interchange",
       resources: [{}],
-      examples:[]
+      examples:[],
+      video:
+      {
+        title:"Avoiding JavaScript Type Conversion Issues - How Type Coercion Works",
+        url: "https://www.youtube.com/watch?v=XWNq7XJuwoo"
+      }
     },
     {
       id: 10,
       title: 'Insertion sort',
       difficulty: 1,
       topic: 4,
-      explanation: "This is interchange",
+      explanation: " interchange",
       resources: [{}],
-      examples:[]
+      examples:[],
+      video:
+      {
+        title:"Avoiding JavaScript Type Conversion Issues - How Type Coercion Works",
+        url: "https://www.youtube.com/watch?v=XWNq7XJuwoo"
+      }
     },
     {
       id: 11,
       title: 'Extract Class refactoring',
       difficulty: 1,
       topic: 3,
-      explanation: "This is interchange",
+      explanation: " interchange",
       resources: [{}],
-      examples:["https://refactoring.guru/es/extract-class"]
-    }
+      examples:["https://refactoring.guru/es/extract-class"],
+      video:
+      {
+        title:"Avoiding JavaScript Type Conversion Issues - How Type Coercion Works",
+        url: "https://www.youtube.com/watch?v=XWNq7XJuwoo"
+      }
+    },
   ];
   
   export const fetchSelectedVits = (topic: Topic) => {

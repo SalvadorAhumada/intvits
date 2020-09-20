@@ -1,10 +1,12 @@
 .card-wrapper {
     max-width: 80%;
     margin: 20px auto;
-    border: 1px solid white;
+    border: 1px solid #c2c8e8;
     border-radius: 10px;
     padding: 0;
-    cursor:pointer;
+    cursor: pointer;
+    background: #ffffff;
+    box-shadow: 1px 1px #00000036;
 }
 
 .card-header-left {
@@ -30,17 +32,32 @@
     justify-content: space-between;
 }
 
+.card-body {
+    display: flex;
+    align-items: center;
+}
+
+.card-body div {
+    padding:10px;
+}
+
+.card-body div p {
+    font-size: 14px;
+    color: #313131;
+    text-align: left;
+}
+
 h3 {
-    color:white;
+    color:#313131;
     margin:0;
     text-align:left;
 }
 
 .js {
-    color: white;
+    color: #eecf6d;
     font-weight: bold;
     font-size: 0.8rem;
-    border: 1px solid white;
+    border: 2px solid #eecf6d;
     border-radius: 3px;
     padding: 3px;
 }

@@ -5,6 +5,8 @@ import "./styles/Ivit.css";
 import { Equalizer, Category, BubbleChart } from "@material-ui/icons";
 import { topics } from "./storage/topics";
 import { Animated } from "react-animated-css";
+import { Resource } from "./storage/intervits";
+import Youtube from "react-youtube";
 
 interface Intervit {
   id:number,
@@ -14,6 +16,7 @@ interface Intervit {
   explanation:string,
   resources:object[],
   examples:string[],
+  video:Resource,
   filterByDifficulty:()=>void,
   filterByCategory:()=>void
 };
@@ -23,10 +26,19 @@ const Ivit:React.FC<Intervit> = (props:Intervit)=> {
   const [showBody, setShowBody] = useState<boolean>(false);
   const [scroll, setScroll] = useState<boolean>(false);
 
+  const opts : object = {
+    height: '195',
+    width: '320',
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+    },
+  };
+
   const getDifficulty = (diff:number) : any[] => {
     let difficulty = [];
     while(diff !== 0) {
-      difficulty.push(<Star key={diff} style={{color:"white", fontSize:12}}/>)
+      difficulty.push(<Star key={diff} style={{color:"#eecf6d", fontSize:12}}/>)
       diff--;
     }
     return difficulty;
@@ -45,11 +57,11 @@ const Ivit:React.FC<Intervit> = (props:Intervit)=> {
       case 1:
         return <span className="js">JS</span>
       case 2:
-        return <BubbleChart style={{color:"white"}}/>
+        return <BubbleChart style={{color:"#eecf6d"}}/>
       case 3:
-        return <Category style={{color:"white"}}/>
+        return <Category style={{color:"#eecf6d"}}/>
       case 4:
-        return <Equalizer style={{color:"white"}}/>
+        return <Equalizer style={{color:"#eecf6d"}}/>
     }
   }
   
@@ -68,6 +80,10 @@ const Ivit:React.FC<Intervit> = (props:Intervit)=> {
     if(selectedDiv && !scroll) {
       selectedDiv.scrollIntoView();
     }
+  };
+
+  const pauseVideo = (e:any) => {
+    // e.target.pauseVideo();
   }
 
   const setId = (title:string) => {
@@ -76,7 +92,10 @@ const Ivit:React.FC<Intervit> = (props:Intervit)=> {
   };
   
   const cardBody = showBody ? <div className="card-body animated fadeInDown" onClick={openCardHandler}>
-  dis is da body
+  <Youtube className="youtube-vid" videoId={props.video.url} opts={opts} onReady={pauseVideo} />
+  <div>
+    <p>{props.explanation}</p>
+    </div>
   </div> : ""
 
   return (

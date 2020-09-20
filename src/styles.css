@@ -1,17 +1,6 @@
 body {
-    background: #16222a; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-      to bottom,
-      #3a6073,
-      #16222a
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-      to bottom,
-      #3a6073,
-      #16222a
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-attachment: fixed;
-  }
+  background:#C2C8E8;
+}
 
   * {
     font-family: "Poppins", sans-serif;
@@ -92,13 +81,12 @@ body {
     justify-content: center;
     flex-direction: column;
     font-size: 1.5rem;
-    color: #eee2dc;
+    color: #313131;
     height: 40vh;
   }
   
   p {
     font-size: 18px;
-    font-weight: bolder;
   }
   
   .header-main h2 {
@@ -123,13 +111,13 @@ body {
   .dropdown-options {
     display: flex;
     flex-direction: column;
-    border: 2px solid #4b7d63;
+    border: 2px solid #e2c567;
     border-radius: 15px;
     position: absolute;
     right: -207px;
     top: -43px;
     width: 200px;
-    background: #4b7d63;
+    background: #e2c567;
     font-weight: bolder;
     border-bottom: 3px solid #141414;
     letter-spacing: 1px;
@@ -146,16 +134,18 @@ body {
     letter-spacing: 2px;
     border-bottom: 3px solid #141414;
     width:160px;
+    text-shadow: 1px 1px 1px #000000d4;
   }
 
   .dropdown-options span {
     padding:10px;
     color:white;
+    text-shadow: 1px 1px 1px #000000d4;
     cursor:pointer;
   }
 
   .dropdown-options span:hover {
-    background: #00000036;
+    background: #0000000a;
   }
 
   .dropdown-options span:nth-child(1) {
