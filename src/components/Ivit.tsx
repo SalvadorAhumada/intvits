@@ -13,7 +13,7 @@ interface Intervit {
   title:string,
   difficulty:number,
   topic:number,
-  explanation:string,
+  explanation:string[],
   resources:object[],
   examples:string[],
   video:Resource,
@@ -24,7 +24,7 @@ interface Intervit {
 const Ivit:React.FC<Intervit> = (props:Intervit)=> {
 
   const [showBody, setShowBody] = useState<boolean>(false);
-  const [scroll, setScroll] = useState<boolean>(false);
+  const [scroll, setScroll]     = useState<boolean>(false);
 
   const opts : object = {
     height: '195',
@@ -83,7 +83,7 @@ const Ivit:React.FC<Intervit> = (props:Intervit)=> {
   };
 
   const pauseVideo = (e:any) => {
-    // e.target.pauseVideo();
+    e.target.pauseVideo();
   }
 
   const setId = (title:string) => {
@@ -91,11 +91,11 @@ const Ivit:React.FC<Intervit> = (props:Intervit)=> {
     return title;
   };
   
-  const cardBody = showBody ? <div className="card-body animated fadeInDown" onClick={openCardHandler}>
+  const cardBody = showBody ? <div className="card-body animated fadeIn" onClick={openCardHandler}>
   <Youtube className="youtube-vid" videoId={props.video.url} opts={opts} onReady={pauseVideo} />
-  <div>
-    <p>{props.explanation}</p>
-    </div>
+  <div className="explanation">
+    {props.explanation.map((paragraph,index) => <p key={index}>{paragraph}</p>)}
+  </div>
   </div> : ""
 
   return (

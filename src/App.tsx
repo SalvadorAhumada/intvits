@@ -12,7 +12,7 @@ interface Intervits {
   title:string,
   difficulty:number,
   topic:number,
-  explanation:string,
+  explanation:string[],
   resources:object[],
   examples:string[],
   video:Resource

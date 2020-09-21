@@ -3,7 +3,7 @@ export type Intervit = {
     title: string,
     difficulty:number,
     topic:number,
-    explanation:string,
+    explanation:string[],
     resources:object[],
     examples:string[],
     video:Resource
@@ -28,7 +28,7 @@ export type Intervit = {
       title: "Type coercion",
       difficulty: 3,
       topic: 1,
-      explanation: "Type coercion is the process of converting value from one type to another (such as string to number, object to boolean, and so on). Any type, be it primitive or an object, is a valid subject for type coercion",
+      explanation: ["Type coercion is the process of converting value from one type to another (such as string to number, object to boolean, and so on). Any type, be it primitive or an object, is a valid subject for type coercion"],
       resources: [
         {
           title: "JavaScript type coercion explained",
@@ -48,7 +48,7 @@ export type Intervit = {
       title: "FizzBuzz",
       difficulty: 2,
       topic: 3,
-      explanation: " interchange",
+      explanation: ["interchange"],
       resources: [{}],
       examples:[],
       video:
@@ -62,7 +62,7 @@ export type Intervit = {
       title: "Repeating number in array",
       difficulty: 2,
       topic: 3,
-      explanation: " interchange",
+      explanation: [""],
       resources: [{}],
       examples:[],
       video:
@@ -76,7 +76,7 @@ export type Intervit = {
       title: "Reversing a LinkedList",
       difficulty: 5,
       topic: 4,
-      explanation: " interchange",
+      explanation: [""],
       resources: [{}],
       examples:[],
       video:
@@ -90,7 +90,7 @@ export type Intervit = {
       title: '"this" in Javascript',
       difficulty: 4,
       topic: 1,
-      explanation: "In most cases, the value of this is determined by how a function is called (runtime binding). It can't be set by assignment during execution, and it may be different each time the function is called.",
+      explanation: ["A function's this keyword behaves a little differently in JavaScript compared to other languages. It also has some differences between strict mode and non-strict mode.","In most cases, the value of this is determined by how a function is called (runtime binding). It can't be set by assignment during execution, and it may be different each time the function is called.","ES5 introduced the bind() method to set the value of a function's this regardless of how it's called, and ES2015 introduced arrow functions which don't provide their own this binding (it retains the this value of the enclosing lexical context)."],
       resources: [
         {
           title:"test", 
@@ -113,7 +113,7 @@ export type Intervit = {
       title: 'Basics of OOP?',
       difficulty: 1,
       topic: 2,
-      explanation: " interchange",
+      explanation: [""],
       resources: [{}],
       examples:[],
       video:
@@ -127,7 +127,7 @@ export type Intervit = {
       title: 'Changing the value of two variables without using a third varaiable',
       difficulty: 2,
       topic: 4,
-      explanation: " interchange",
+      explanation: [""],
       resources: [{}],
       examples:[],
       video:
@@ -141,7 +141,7 @@ export type Intervit = {
       title: 'Interfaces',
       difficulty: 2,
       topic: 4,
-      explanation: " interchange",
+      explanation: [""],
       resources: [{}],
       examples:[],
       video:
@@ -155,7 +155,7 @@ export type Intervit = {
       title: 'Arrays length',
       difficulty: 1,
       topic: 1,
-      explanation: " interchange",
+      explanation: [""],
       resources: [{}],
       examples:[],
       video:
@@ -169,7 +169,7 @@ export type Intervit = {
       title: 'Insertion sort',
       difficulty: 1,
       topic: 4,
-      explanation: " interchange",
+      explanation: [""],
       resources: [{}],
       examples:[],
       video:
@@ -183,7 +183,7 @@ export type Intervit = {
       title: 'Extract Class refactoring',
       difficulty: 1,
       topic: 3,
-      explanation: " interchange",
+      explanation: [""],
       resources: [{}],
       examples:["https://refactoring.guru/es/extract-class"],
       video:
