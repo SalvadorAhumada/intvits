@@ -38,7 +38,7 @@ function App(): JSX.Element {
 
   const handleFilter = () => {
     setDropdown(!openDropdown);
-  }
+  };
 
   const handleFilterOption = (e:Topics) => {
     const selectedFilter:number = e.value;
@@ -46,7 +46,7 @@ function App(): JSX.Element {
     setShowClose(true);
     setFilter(e.label);
     setDropdown(!openDropdown);
-  }
+  };
 
   const handleClose = () => {
     setShowClose(false);
@@ -61,14 +61,14 @@ function App(): JSX.Element {
     setFilter(current[0].label);
     const difficultyFiltered = selectedIvits.filter(ivit => ivit.difficulty === props.difficulty && ivit.topic === props.topic);
     setSelectedIvits(difficultyFiltered);
-  }
+  };
 
   const setCategoryFilter = (props:Intervits) => {
     const current = topics.filter(topic => topic.value === props.topic);
     setShowClose(true);
     setFilter(current[0].label);
     setSelectedIvits(fetchSelectedVits(current[0].value));
-  }
+  };
 
   const showDropdown = openDropdown ? <div className="dropdown-options">
     {filters.map((filter:Topics,index:number)=> <span onClick={()=>handleFilterOption(filter)} key={index}>{filter.label}</span>)}

@@ -5,14 +5,14 @@ export default function Navbar() {
   return (
     <div className="navbar-wrapper">
       <nav>
-        <h1>intervits</h1>
+        <h1>inTVits</h1>
         <div className="menu">
           <ul>
             <li>
-              <a href="https://www.google.com">ABOUT</a>
+              <a href="https://www.google.com">about</a>
             </li>
             <li>
-              <a href="https://www.google.com">SHARE YOUR INTERVIT</a>
+              <a href="https://www.google.com">share your intvit</a>
             </li>
           </ul>
         </div>

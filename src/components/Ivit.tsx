@@ -77,9 +77,7 @@ const Ivit:React.FC<Intervit> = (props:Intervit)=> {
     const title = props.title.replace(/[?\s]/gi, '-').toLowerCase();
     const selectedDiv = document.getElementById(title);
 
-    if(selectedDiv && !scroll) {
-      selectedDiv.scrollIntoView();
-    }
+    if(selectedDiv && !scroll) selectedDiv.scrollIntoView();
   };
 
   const pauseVideo = (e:any) => {
@@ -102,9 +100,9 @@ const Ivit:React.FC<Intervit> = (props:Intervit)=> {
     <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
     <div id={setId(props.title)} className="card-wrapper">
       <div className="card-header">
-        <div className="card-header-left" onClick={openCardHandler}> 
+        <div className="card-header-left"> 
           <span onClick={()=>setFilter(props)} style={{width:"60px", margin:"5px", display:"flex"}} title={`Difficulty: ${props.difficulty}. Click here to see all Level ${props.difficulty} for ${getName(props.topic)}.`}>{getDifficulty(props.difficulty)}</span>
-            <h3>{props.title}</h3>
+            <h4 onClick={openCardHandler}>{props.title}</h4>
         </div>
         <div className="card-header-right" title={`Click here to see all Intervits for ${getName(props.topic)}`} onClick={()=>filterCategory(props)}>
           {getLogo(props.topic)}

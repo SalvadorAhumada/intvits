@@ -10,8 +10,7 @@ h1 {
   font-weight: 1000;
   letter-spacing: 2px;
   text-transform: uppercase;
-  background:#313131;
-  color:#C2C8E8;
+  color: #313131;
 }
 
 h1:hover {
