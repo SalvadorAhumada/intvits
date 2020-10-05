@@ -1,3 +1,7 @@
+## Deployment
+
+https://funnelgarden.com/deploying-react-node-typescript-heroku-github/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

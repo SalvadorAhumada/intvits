@@ -11,7 +11,7 @@ export default function Navbar() {
         <div className="menu">
           <ul>
             <li>
-              <a href="#">
+              <a href="https://github.com/SalvadorAhumada/intvits" target="_blank" rel="noopener noreferrer">
                 <Tooltip
                   title="We're always looking for new additions in the Intvits repository!"
                   position="bottom"
@@ -30,7 +30,6 @@ export default function Navbar() {
           </ul>
           <ul>
             <li>
-              <a href="#">
                 <Tooltip
                   title='"The most important skill to be a programmer is learning how to pass job interviews" - anonymous'
                   position="bottom"
@@ -42,7 +41,6 @@ export default function Navbar() {
                     ABOUT
                   </p>
                 </Tooltip>
-              </a>
             </li>
             <li>
             </li>
