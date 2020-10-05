@@ -68,3 +68,45 @@ h4 {
     color:none;
     text-decoration: none;
 }
+
+.explanation p {
+    line-height: 20px;
+}
+
+.explanation p a {
+    color: #535561;
+    font-weight: bolder;
+}
+
+.explanation {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width:100%;
+}
+
+.tippy-tooltip.tippy-tooltip--regular.dark-theme.enter {
+  font-size: 0.7rem;
+}
+
+@media screen and (max-width:900px) {
+    .card-body {
+        flex-direction: column;
+    }
+
+    .explanation {
+        height: auto;
+    }
+}
+
+@media screen and (max-width:600px) {
+    h4 {
+        font-size: 0.7rem;
+    }
+
+    .explanation span p {
+        margin:5px;
+    }
+}

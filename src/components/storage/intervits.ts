@@ -34,6 +34,11 @@ export type Intervit = {
           title: "JavaScript type coercion explained",
           url:
             "https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/"
+        },
+        {
+          title:"Type coercion - MDN web docs",
+          url:
+            "https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion"
         }
       ],
       examples: ['1 + "3"', "[] + 1", '5 - "2"'],
@@ -50,7 +55,7 @@ export type Intervit = {
       topic: 3,
       explanation: ['The "Fizz-Buzz test" is an interview question designed to help filter out the 99.5% of programming job candidates who can\'t seem to program their way out of a wet paper bag.',
     'We can\'t understand why so many people "fail" the Fizz-Buzz test unless we understand why it is "hard" (for them). Understanding that, we may be able to evaluate the usefulness of this tool, and others, as filtering tools for candidates.'],
-      resources: [{title:"Fizzbuzz test",url:"https://wiki.c2.com/?FizzBuzzTest"}],
+      resources: [{title:"Fizz Buzz Test",url:"https://wiki.c2.com/?FizzBuzzTest"}],
       examples:[],
       video:
       {
@@ -98,7 +103,7 @@ export type Intervit = {
           url:"https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/"
         },
         {
-          title:"test2",
+          title:"this - Javascript | MDN",
           url:"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this"
         }
       ],
@@ -128,8 +133,8 @@ export type Intervit = {
       title: 'How do you swap the value of two variables with no temporal variable?',
       difficulty: 2,
       topic: 4,
-      explanation: [""],
-      resources: [{}],
+      explanation: ["The idea is to get sum in one of the two given numbers. The numbers can then be swapped using the sum and subtraction from sum."],
+      resources: [{title:"How to swap two numbers without using a temporary variable?",url:"https://www.geeksforgeeks.org/swap-two-numbers-without-using-temporary-variable/#:~:text=Given%20two%20variables%2C%20x%20and,without%20using%20a%20third%20variable.&text=The%20idea%20is%20to%20get,sum%20and%20subtraction%20from%20sum."}],
       examples:[],
       video:
       {
@@ -142,13 +147,13 @@ export type Intervit = {
       title: 'What is an interface?',
       difficulty: 2,
       topic: 4,
-      explanation: [""],
-      resources: [{}],
+      explanation: ["An interface is a programming structure/syntax that allows the computer to enforce certain properties on an object (class).",'For example, say we have a car class and a scooter class and a truck class. Each of these three classes should have a start_engine() action. How the "engine is started" for each vehicle is left to each particular class, but the fact that they must have a start_engine action is the domain of the interface.'],
+      resources: [{title:"What is the definition of “interface” in object oriented programming - Stackoverflow",url:"https://stackoverflow.com/a/2867064"}],
       examples:[],
       video:
       {
-        title:"Avoiding JavaScript Type Conversion Issues - How Type Coercion Works",
-        url: "https://www.youtube.com/watch?v=XWNq7XJuwoo"
+        title:"C# Interfaces Explained in Simple Terms | Mosh",
+        url: "aQ8YkJrAbzE"
       }
     },
     {
@@ -171,7 +176,7 @@ export type Intervit = {
       difficulty:1,
       topic:3,
       explanation:["A data structure is a particular way of organizing data in a computer so that it can be used effectively.","For example, we can store a list of items having the same data-type using the array data structure."],
-      resources:[{title:"Data Structures",url:"https://www.geeksforgeeks.org/data-structures/"}],
+      resources:[{title:"Data Structures - GeeksforGeeks",url:"https://www.geeksforgeeks.org/data-structures/"}],
       examples:[],
       video:
       {

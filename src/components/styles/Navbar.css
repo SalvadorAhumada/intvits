@@ -55,31 +55,23 @@ ul {
   justify-content: space-around;
   list-style-type: none;
   padding: 0;
+  margin:0;
   font-size: 15px;
+  cursor:pointer;
 }
 
-ul li a {
+ul li p {
   color: #313131;
-  text-decoration: none;
+  font-size:0.8rem;
   transition: 0.5s;
-  width: 300px;
-  font-weight: bolder;
-}
-
-ul li:nth-child(1) {
-  position: absolute;
-  top: 18px;
-  right: 10px;
-}
-
-ul li:nth-child(2) {
-  position: absolute;
-  right: 100px;
-  top: 18px;
 }
 
 .menu {
   width: 300px;
   display: flex;
   justify-content: space-around;
+}
+
+.menu ul li a {
+  text-decoration: none;
 }
